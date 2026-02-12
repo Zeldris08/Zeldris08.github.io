@@ -6,14 +6,16 @@
 
 body {
     font-family: 'Shadows Into Light', cursive;
-    background: #fff5f7;
+    background: #fff5f7; /* PINK BACKGROUND */
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
 
+/* Container */
 .container {
     position: relative;
     width: 90%;
@@ -22,19 +24,21 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(255, 100, 150, 0.2);
+    background: white;
 }
 
+/* Hidden Message */
 .hidden-message {
     position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 3rem;
     color: #ff4081;
-    background: #fff;
+    background: white;
     text-align: center;
     padding: 20px;
     z-index: 1;
@@ -42,97 +46,10 @@ body {
 
 .valentine-text {
     margin-bottom: 30px;
+    line-height: 1.4;
 }
 
-.button-container {
-    margin-top: 20px;
-}
-
-.cover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #ffebee;
-    z-index: 2; 
-    background: rgba(255, 235, 238, 0.95);
-}
-
-.cover-tab {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%); 
-    width: 300px; 
-    height: 60px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px 20px 0 0;
-    cursor: grab;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-     z-index: 3;
-
-}
-
-.cover-tab:active {
-    cursor: grabbing;
-}
-
-.tab-hint {
-    font-size: 0.9rem;
-    color: #ff6b93;
-}
-
-.tab-handle {
-    font-size: 1.5rem;
-    margin-top: 5px;
-}
-
-.cover:active {
-    cursor: grabbing;
-}
-
-.cover-text {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: calc(100% - 60px); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.5rem;
-    color: #333;
-    text-align: center;
-    padding: 20px;
-}
-
-.cover-tab:hover {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 -5px 20px rgba(255, 100, 150, 0.3);
-}
-
-.cover.dragging {
-    transition: none !important;
-}
-
-.victory-message {
-    font-size: 2rem;
-    color: #ff4081;
-    text-align: center;
-    margin: 20px 0;
-    animation: fadeInUp 1s ease;
-    width: 100%;
-    position: relative;
-    z-index: 10;
-}
-
-.button-container {
-    position: relative;
-    z-index: 5;
-}
-
+/* Button Container */
 .button-container {
     position: absolute;
     bottom: 40px;
@@ -140,14 +57,16 @@ body {
     display: flex;
     justify-content: center;
     gap: 40px;
-    opacity: 0; 
+    opacity: 0;
     transition: opacity 0.5s ease;
+    z-index: 5;
 }
 
 .hidden-message.revealed .button-container {
     opacity: 1;
 }
 
+/* Buttons */
 .yes-btn, .no-btn {
     padding: 15px 40px;
     font-size: 1.5rem;
@@ -161,7 +80,6 @@ body {
 .yes-btn {
     background: #ff4081;
     color: white;
-    transform: scale(1);
 }
 
 .yes-btn:hover {
@@ -172,53 +90,97 @@ body {
 .no-btn {
     background: #e0e0e0;
     color: #666;
-    position: relative; 
-    transition: transform 0.2s ease;
+    position: relative;
 }
 
-@keyframes pulse {
-    from { transform: scale(1.1); }
-    to { transform: scale(1.3); }
+/* Cover Layer */
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffebee;
+    z-index: 2;
+    border-radius: 20px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translate(-50%, -40%); }
-    to { opacity: 1; transform: translate(-50%, -50%); }
+/* Draggable Tab */
+.cover-tab {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px 20px 0 0;
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    z-index: 3;
 }
 
-@keyframes celebrate {
-    0% { transform: scale(1); }
-    50% { transform: scale(2.8); }
-    100% { transform: scale(2.5); }
+.cover-tab:active {
+    cursor: grabbing;
 }
 
-.no-btn.tired {
-    opacity: 0.8;
-    filter: grayscale(30%);
+.cover-tab:hover {
+    background: white;
+    box-shadow: 0 -5px 20px rgba(255, 100, 150, 0.3);
 }
 
-@keyframes pulseGlow {
-    0% { 
-        transform: scale(1.1); 
-        box-shadow: 0 0 20px rgba(255, 64, 129, 0.5);
+.tab-hint {
+    font-size: 0.9rem;
+    color: #ff6b93;
+}
+
+.tab-handle {
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+/* Cover Text */
+.cover-text {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+.cover.dragging {
+    transition: none !important;
+}
+
+/* ========== SIMPLE CSS FLOWERS ========== */
+.flower {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    font-size: 30px;
+    animation: floatFlower 2s ease-out forwards;
+}
+
+@keyframes floatFlower {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
     }
-    100% { 
-        transform: scale(1.4); 
-        box-shadow: 0 0 40px rgba(255, 64, 129, 0.9);
+    100% {
+        opacity: 0;
+        transform: translateY(-120px) rotate(30deg);
     }
 }
 
-@keyframes gentlePulse {
-    0% { 
-        transform: scale(1.1); 
-        box-shadow: 0 0 15px rgba(255, 64, 129, 0.5);
-    }
-    100% { 
-        transform: scale(1.25); 
-        box-shadow: 0 0 25px rgba(255, 64, 129, 0.7);
-    }
-}
-
+/* Victory Message */
 .victory-message {
     font-size: 2rem;
     color: #ff4081;
@@ -229,24 +191,22 @@ body {
 }
 
 @keyframes fadeInUp {
-    from { 
-        opacity: 0; 
-        transform: translateY(20px); 
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.yes-btn.celebrating {
-    animation: none !important;
-    transform: scale(1.8) !important;
-    box-shadow: 0 0 40px rgba(255, 64, 129, 0.9) !important;
+@keyframes gentlePulse {
+    0% { transform: scale(1.1); box-shadow: 0 0 15px rgba(255, 64, 129, 0.5); }
+    100% { transform: scale(1.25); box-shadow: 0 0 25px rgba(255, 64, 129, 0.7); }
 }
 
-.yes-btn:disabled,
-.yes-btn.clicked {
+@keyframes celebrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(2.8); }
+    100% { transform: scale(2.5); }
+}
+
+.yes-btn:disabled {
     opacity: 0.7;
     cursor: not-allowed;
     pointer-events: none;
