@@ -1,7 +1,3 @@
-// ============================================
-// 💌 VALENTINE CARD - FLOWERS CONTINUE AFTER YES
-// ============================================
-
 // DOM Elements
 const cover = document.getElementById('cover');
 const coverTab = document.getElementById('coverTab');
@@ -9,10 +5,7 @@ const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
 const hiddenMessage = document.getElementById('hiddenMessage');
 
-// ============================================
-// 🎮 STATE VARIABLES
-// ============================================
-
+//  STATE VARIABLES
 const MAX_SLIDE = 550;
 let yesClicked = false;
 let buttonsActive = false;
@@ -21,17 +14,9 @@ let startX;
 let currentX = 0;
 let dodgeCount = 0;
 
-// 🌸 FLOWERS NEVER STOP - REMOVED flowersActive flag
-
-// ============================================
-// 🌸 SIMPLE CSS FLOWERS - ALWAYS ACTIVE!
-// ============================================
-
 const FLOWERS = ['🌸', '🌼', '🌻', '🌺', '🌸', '🌷', '🌹', '💮', '🏵️', '🌼', '🌸', '💖', '💗', '💓'];
 
 function spawnFlower(e) {
-    // 🌸 FLOWERS ALWAYS SPAWN - NO CONDITION!
-    // Get click position
     let x, y;
     
     if (e.type === 'click') {
@@ -73,7 +58,7 @@ function spawnFlower(e) {
 }
 
 // ============================================
-// 🖱️ DRAG LOGIC
+//  DRAG LOGIC
 // ============================================
 
 coverTab.addEventListener('mousedown', startDrag);
@@ -181,7 +166,7 @@ function slideBack() {
 }
 
 // ============================================
-// 🎯 NO BUTTON DODGING
+//  NO BUTTON DODGING
 // ============================================
 
 function handleNoButtonDodge(e) {
@@ -231,7 +216,7 @@ function handleTouchDodge(e) {
 }
 
 // ============================================
-// 💖 YES BUTTON CLICK - FLOWERS CONTINUE!
+//  YES BUTTON CLICK - FLOWERS CONTINUE!
 // ============================================
 
 yesBtn.addEventListener('click', () => {
@@ -305,7 +290,7 @@ yesBtn.addEventListener('click', () => {
 });
 
 // ============================================
-// 💥 HEART EXPLOSION
+//  HEART EXPLOSION
 // ============================================
 
 function createHeartExplosion(count) {
@@ -333,7 +318,7 @@ function createHeartExplosion(count) {
 }
 
 // ============================================
-// 📱 INITIALIZATION - FLOWERS FOREVER!
+//  INITIALIZATION - FLOWERS FOREVER!
 // ============================================
 
 // Start flowers immediately - NO CONDITIONS, ALWAYS ON

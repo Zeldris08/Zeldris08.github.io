@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Shadows Into Light', cursive;
-    background: #fff5f7; /* PINK BACKGROUND */
+    background: #fff5f7; 
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,7 +15,6 @@ body {
     position: relative;
 }
 
-/* Container */
 .container {
     position: relative;
     width: 90%;
@@ -27,7 +26,6 @@ body {
     background: white;
 }
 
-/* Hidden Message */
 .hidden-message {
     position: absolute;
     width: 100%;
@@ -49,7 +47,6 @@ body {
     line-height: 1.4;
 }
 
-/* Button Container */
 .button-container {
     position: absolute;
     bottom: 40px;
@@ -66,7 +63,6 @@ body {
     opacity: 1;
 }
 
-/* Buttons */
 .yes-btn, .no-btn {
     padding: 15px 40px;
     font-size: 1.5rem;
@@ -93,7 +89,6 @@ body {
     position: relative;
 }
 
-/* Cover Layer */
 .cover {
     position: absolute;
     width: 100%;
@@ -103,7 +98,6 @@ body {
     border-radius: 20px;
 }
 
-/* Draggable Tab */
 .cover-tab {
     position: absolute;
     bottom: 0;
@@ -141,7 +135,6 @@ body {
     margin-top: 5px;
 }
 
-/* Cover Text */
 .cover-text {
     position: absolute;
     top: 0;
@@ -180,7 +173,6 @@ body {
     }
 }
 
-/* Victory Message */
 .victory-message {
     font-size: 2rem;
     color: #ff4081;
